@@ -1,0 +1,112 @@
+@charset "UTF-8";
+
+/* 이 CSS는 로그인 페이지와 거의 동일한 스타일을 가집니다.
+  body, header, footer 등 공통 요소에 대한 스타일은 모두 제거했습니다.
+*/
+
+/* 1. 페이지의 메인 영역(<main>) 설정 */
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px; /* 위아래 여백 */
+}
+
+/* 2. 정보 수정 폼을 감싸는 컨테이너 (login-container와 동일) */
+.edit-container {
+    width: 100%;
+    max-width: 480px; /* 로그인 폼보다 약간 넓게 설정 */
+    padding: 40px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* 제목 스타일 */
+.edit-container h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 10px;
+}
+.edit-container p {
+    text-align: center;
+    color: #888;
+    margin-bottom: 30px;
+}
+
+/* 입력 필드 그룹 */
+.input-group {
+    margin-bottom: 15px;
+}
+.input-group input[type="password"],
+.input-group input[type="text"],
+.input-group input[type="email"],
+.input-group input[type="id"] {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-top: 5px;
+}
+
+/* 주소 입력 필드 그룹 */
+.input-group.address input {
+    margin-bottom: 10px;
+}
+.address-group {
+    display: flex;
+    gap: 10px;
+}
+.address-group input {
+    flex: 1;
+}
+.btn-find-address {
+    padding: 14px;
+    border: none;
+    background-color: #6c757d;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* 파일 업로드 필드 */
+.file-label {
+    font-size: 14px;
+    color: #666;
+}
+input[type="file"] {
+    margin-top: 8px;
+    font-size: 14px;
+}
+
+/* 버튼 그룹 */
+.button-group {
+    margin-top: 30px;
+    display: flex;
+    gap: 10px;
+}
+.button-group .btn {
+    flex: 1; /* 버튼이 공간을 균등하게 차지 */
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.button-group .btn-primary {
+    background-color: #4a90e2;
+    color: white;
+}
+.button-group .btn-primary:hover {
+    background-color: #357abd;
+}
+.button-group .btn-secondary {
+    background-color: #e9ecef;
+    color: #333;
+}
+.button-group .btn-secondary:hover {
+    background-color: #dee2e6;
+}

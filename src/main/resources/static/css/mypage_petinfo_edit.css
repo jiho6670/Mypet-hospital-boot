@@ -1,0 +1,117 @@
+@charset "UTF-8";
+
+/* 메인 영역 */
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+}
+
+/* 수정 폼 컨테이너 */
+.edit-container {
+    width: 100%;
+    max-width: 480px;
+    padding: 40px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* 제목/설명 */
+.edit-container h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 10px;
+}
+.edit-container p {
+    text-align: center;
+    color: #888;
+    margin-bottom: 30px;
+}
+
+/* 입력 필드 그룹 */
+.input-group {
+    margin-bottom: 15px;
+}
+.input-group input[type="text"],
+.input-group input[type="password"],
+.input-group input[type="email"],
+.input-group input[type="number"],
+.input-group input[type="date"],
+.input-group select {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+/* 주소 입력 */
+.input-group.address input {
+    margin-bottom: 10px;
+}
+.address-group {
+    display: flex;
+    gap: 10px;
+}
+.address-group input {
+    flex: 1;
+}
+.btn-find-address {
+    padding: 14px;
+    border: none;
+    background-color: #6c757d;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.btn-find-address:hover {
+    background-color: #5a6268;
+}
+
+/* 파일 업로드 */
+.file-label {
+    font-size: 14px;
+    color: #666;
+    display: block;
+    margin-bottom: 5px;
+}
+input[type="file"] {
+    font-size: 14px;
+    padding: 6px;
+}
+
+/* 버튼 그룹 */
+.button-group {
+    margin-top: 30px;
+    display: flex;
+    gap: 10px;
+}
+.button-group .btn {
+    flex: 1;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.button-group .btn-primary {
+    background-color: #4a90e2;
+    color: white;
+}
+.button-group .btn-primary:hover {
+    background-color: #357abd;
+}
+.button-group .btn-secondary {
+    background-color: #e9ecef;
+    color: #333;
+}
+.button-group .btn-secondary:hover {
+    background-color: #dee2e6;
+}

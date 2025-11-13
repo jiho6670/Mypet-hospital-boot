@@ -1,0 +1,610 @@
+@charset "UTF-8";
+/*
+==============================
+[통합본] 예약 사이트 모음
+==============================
+*/
+
+/* ----- 1. 예약 조회 (Check) 페이지 기준 스타일 ----- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.main-container {
+    flex: 1; /* 헤더와 푸터 사이 공간을 모두 차지 */
+    padding: 60px 0;
+    background-color: #f8f9fa;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* 수직 중앙 정렬 */
+}
+
+.check-form-container {
+    width: 100%;
+    max-width: 500px;
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.section-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.sub-title {
+    font-size: 15px;
+    color: #666;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.check-form .form-group {
+    margin-bottom: 20px;
+}
+
+.check-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+}
+
+.check-form input[type="text"],
+.check-form input[type="tel"] {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.check-form .phone-inputs {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.check-form .phone-inputs input {
+    text-align: center;
+}
+
+.check-form .phone-inputs span {
+    color: #999;
+}
+
+.form-actions {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #4a90e2; /* 진료 테마 컬러 */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #357abd;
+}
+
+
+/* ----- 2. 예약 메인 & 예약 폼 고유 스타일 ----- */
+
+/* reservation.jsp의 버튼 스타일 */
+table {
+  margin: 50px auto; 
+  border-spacing: 100px;
+  border-collapse: separate;
+}
+
+.reserve-btn {
+  padding: 25px 65px;
+  font-size: 18px;
+  font-weight: bold;
+  border-width: 3px;
+  border-style: solid;
+  cursor: pointer;
+  background-color: #ffffff;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  border-color: #4a90e2; 
+  color: #333;
+  background-image: linear-gradient(45deg, #4a90e2 50%, transparent 50%);
+  background-position: 100%;
+  background-size: 400%;
+  transition: background 300ms ease-in-out;
+}
+
+.reserve-btn:hover {
+  background-position: 0;
+  color: #ffffff;
+}
+
+/* 예약 폼(medical, grooming) 컨테이너 */
+.reservation-form-container {
+    width: 100%;
+    max-width: 800px;
+}
+
+.reservation-section {
+    margin-bottom: 30px;
+}
+
+/* 예약 폼의 타이틀 (조회 페이지와 스타일이 달라 별도 정의) */
+.reservation-form-container .section-title {
+    font-size: 22px;
+    font-weight: bold;
+    color: #333;
+    padding-left: 15px;
+    border-left: 4px solid #4a90e2;
+    margin-bottom: 20px;
+    text-align: left; /* 조회 페이지와 다른 부분 */
+}
+
+/* 유의사항 박스 */
+.notice-box, .info-box {
+    background-color: #e9f5f5;
+    border: 1px solid #cce5e5;
+    padding: 25px;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #333;
+}
+.notice-title { font-weight: bold; margin-bottom: 15px; }
+.notice-box ul { list-style-type: none; padding-left: 0; margin-bottom: 20px; }
+.notice-box ul li { padding-left: 15px; position: relative; margin-bottom: 8px; line-height: 1.6; }
+.notice-box ul li::before { content: '•'; position: absolute; left: 0; color: #4a90e2; }
+
+.tel-button { display: block; padding: 12px; background-color: #fff; border: 1px solid #ccc; border-radius: 5px; text-align: center; font-size: 18px; font-weight: bold; color: #333; transition: background-color 0.3s; }
+.tel-button:hover { background-color: #f5f5f5; }
+
+/* 정보 입력 폼 */
+.info-box { text-align: center; margin-bottom: 20px; }
+.info-form .form-group { display: flex; align-items: center; padding: 15px 0; border-bottom: 1px solid #e9e9e9; }
+.info-form .form-group:last-of-type { align-items: flex-start; }
+.info-form label { width: 120px; font-weight: bold; color: #555; padding-top: 5px; }
+.info-form input[type="text"],
+.info-form input[type="tel"],
+.info-form select,
+.info-form textarea { flex: 1; padding: 8px 12px; border: 1px solid #ddd; border-radius: 4px; font-size: 14px; }
+.info-form .phone-inputs { display: flex; align-items: center; flex: 1; }
+.info-form .phone-inputs input { width: 80px; text-align: center; }
+.info-form .phone-inputs span { margin: 0 10px; color: #999; }
+
+/* 예약 폼의 '예약하기' 버튼 (조회 페이지와 스타일이 달라 별도 정의) */
+.reservation-form-container .submit-btn {
+    padding: 12px 60px; /* 너비가 100%가 아님 */
+    width: auto;
+}
+
+.consult-time { margin-top: 20px; font-size: 13px; color: #777; background-color: #f1f1f1; padding: 10px; border-radius: 5px; text-align: center; }
+
+/*
+======================================
+기존 메인 기능부분
+======================================
+*/
+/*
+=================================
+Header (헤더)
+=================================
+*/
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+header {
+    width: 100%;
+    border-bottom: 1px solid #ddd;
+}
+
+header .inner {
+    width: 1180px;
+    height: 120px;
+    margin: 0px auto;
+    position: relative;
+}
+
+header .inner h1 {
+    left: 0px;
+    bottom: 15px;
+    position: absolute;
+    align-items: center;
+}
+
+header .inner h1 a {
+    font: bold 24px/1 "arial";
+    color: #444;
+    display: flex;
+    align-items: center; 
+    gap: 10px; 
+}
+header .inner h1 a img {
+    height: 110px; 
+    width: auto; 
+    vertical-align: middle; 
+}
+header .inner .util {
+    top: 20px;
+    right: 30px;
+    position: absolute;
+}
+
+header .inner .util li {
+    float: left;
+}
+
+header .inner .util li a {
+    font: 12px/1 "arial";
+    color: #999;
+    padding: 0px 10px;
+    display: block;
+}
+
+header .inner #gnb {
+    bottom: 0px;
+    right: 0px;
+    position: absolute;
+}
+
+header .inner #gnb li {
+    float: left;
+}
+
+header .inner #gnb li a {
+    font: bold 15px/1 "aria";
+    color: #555;
+    padding: 20px 40px;
+    display: block;
+    transition: all 0.5s;
+}
+
+header .inner #gnb li a:hover {
+    color: #fff;
+    background: #555;
+}
+
+/* 드롭다운 메뉴 스타일 */
+#gnb > li.dropdown-parent {
+    position: relative; 
+}
+
+.submenu {
+    position: absolute;   
+    top: 100%;            
+    left: 0;
+    width: 100%;          
+    background-color: #fff; 
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+    list-style: none;     
+    padding: 0;
+    display: none;        
+    z-index: 10;          
+}
+
+#gnb > li.dropdown-parent:hover .submenu {
+    display: block;      
+}
+
+.submenu li a {
+    padding: 12px 20px;   
+    font-size: 14px;      
+    color: #444;          
+    display: block;       
+    text-align: center;
+    transition: all 0.3s; 
+    font-weight: normal;
+    white-space: nowrap;
+}
+
+.submenu li a:hover {
+    background-color: #f5f5f5; 
+    color: #000;
+}
+
+
+/*
+=================================
+Floating Icons (플로팅 아이콘)
+=================================
+*/
+.floating-icons {
+    position: fixed; 
+    top: 50%; 
+    right: 20px; 
+    transform: translateY(-50%); 
+    z-index: 1000; 
+}
+
+.floating-icons a {
+    display: block; 
+    width: 50px; 
+    height: 50px; 
+    margin-bottom: 15px; 
+    border-radius: 50%; 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); 
+    transition: transform 0.3s; 
+    background-color: #fff; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.floating-icons a img {
+    width: 60%;
+    height: 60%;
+}
+
+.floating-icons a:hover {
+    transform: scale(1.15); 
+}
+
+
+/*
+=================================
+Footer (푸터)
+=================================
+*/
+footer{
+    width: 100%;
+    background: #333;
+    padding: 100px 0px;
+    border-top: 1px solid #888;
+}
+footer .inner{
+    width: 1180px;
+    margin: 0px auto;
+}
+footer .inner .upper{
+    width: 100%;
+    border-bottom: 1px solid #777;
+    padding-bottom: 20px;
+}
+footer .inner .upper::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+footer .inner .upper h1{
+    font: bold 24px/1 "arial";
+    color: #666;
+    float: left;
+}
+footer .inner .upper ul{
+    float: right;
+}
+footer .inner .upper ul li{
+    float: left;
+    margin-left: 20px;
+}
+footer .inner .upper ul li a{
+    font: bold 14px/1 "arial";
+    color: #666; 
+}
+footer .inner .lower{
+    width: 100%;
+    padding-top: 20px;
+}
+footer .inner .lower address{
+    width: 100%;
+    font: 12px/1.3 "arial";
+    color: #777;
+    margin-bottom: 20px;
+}
+footer .inner .lower p{
+    width: 100%;
+    font: 12px/1 "arial";
+    color: #777;
+}
+
+/* 개선된 푸터 스타일 (기존 코드와 중복되는 부분을 대체) */
+footer {
+    padding: 50px 0;
+    background-color: #333;
+    color: #aaa;
+    font-size: 14px;
+}
+
+footer .inner {
+    width: 1180px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer .footer-logo a {
+    font: bold 20px/1 "arial";
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+footer .footer-logo img {
+    height: 40px;
+}
+
+footer .footer-info {
+    text-align: right;
+}
+
+footer .footer-info p {
+    margin-bottom: 8px;
+    line-height: 1.6;
+}
+
+footer .footer-info .copyright {
+    margin-top: 15px;
+    color: #777;
+    font-size: 13px;
+}
+html, body {
+  height: 100%; /* html과 body 높이를 화면 전체로 설정 (필수) */
+}
+
+body {
+    display: flex; /* body 자체를 flex 컨테이너로 만들어도 됩니다. */
+    flex-direction: column;
+    margin: 0;
+}
+
+.wrap {
+  min-height: 100vh; /* 최소 높이를 화면 전체 높이(viewport height)로 설정 */
+  display: flex;
+  flex-direction: column; /* 자식 요소(header, main, footer)를 세로로 정렬 */
+}
+
+.main-container {
+  flex: 1; /* ✨ 가장 중요한 부분! 남는 공간을 모두 차지하도록 만듦 */
+}
+
+/*
+====================================
+예약 조회 결과 페이지
+====================================
+*/
+
+/* --- 결과 컨테이너 및 제목 --- */
+.result-container, .error-container {
+    margin-top: 20px;
+    text-align: center; /* 내부 요소들 중앙 정렬 */
+}
+
+.result-title {
+    font-size: 1.1em; /* 16px 정도 */
+    color: #555;
+    margin-bottom: 25px;
+}
+
+/* --- 결과 테이블 --- */
+.result-table {
+    width: 100%; /* 부모 요소(check-form-container) 너비에 맞춤 */
+    border-collapse: collapse; /* 테두리를 한 줄로 합침 */
+    font-size: 14px;
+    color: #333;
+    table-layout: fixed; /* 컬럼 너비를 고르게 배분 */
+}
+
+/* 테이블 헤더(th) 및 데이터(td) 셀 공통 스타일 */
+.result-table th,
+.result-table td {
+    padding: 12px 10px;
+    border-bottom: 1px solid #e9e9e9; /* 행 구분선 */
+    vertical-align: middle; /* 셀 내용 수직 중앙 정렬 */
+    text-align: center;
+}
+
+/* 테이블 헤더 행 스타일 */
+.result-table thead th {
+    background-color: #f8f9fa; /* 밝은 회색 배경 */
+    font-weight: bold;
+}
+
+/* 테이블 본문 행에 마우스 올렸을 때 효과 */
+.result-table tbody tr:hover {
+    background-color: #f5f5f5;
+}
+
+/* --- 상태 표시 (뱃지 스타일) --- */
+.status {
+    padding: 5px 12px;
+    border-radius: 15px; /* 둥근 모서리 */
+    font-size: 12px;
+    font-weight: bold;
+    color: #fff;
+    display: inline-block;
+}
+
+.status-completed {
+    background-color: #4a90e2; /* 예약완료: 파란색 */
+}
+
+/* (참고) 다른 상태를 추가할 경우를 대비한 예시 */
+.status-finished {
+    background-color: #6c757d; /* 진료완료: 회색 */
+}
+.status-cancelled {
+    background-color: #dc3545; /* 예약취소: 빨간색 */
+}
+
+
+/* --- 관리 버튼 (변경, 취소) --- */
+.actions .btn {
+    padding: 6px 12px;
+    font-size: 13px;
+    font-weight: bold;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    margin: 0 4px; /* 버튼 사이 간격 */
+}
+
+.actions .btn:hover {
+    background-color: #f0f0f0;
+    border-color: #999;
+}
+
+.actions .btn-danger {
+    border-color: #dc3545;
+    color: #dc3545;
+}
+
+.actions .btn-danger:hover {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+
+/* --- 에러 메시지 --- */
+.error-message {
+    font-size: 16px;
+    font-weight: bold;
+    color: #d9534f; /* 붉은색 계열 */
+    margin-bottom: 25px;
+}
+
+.error-container .btn {
+    padding: 10px 30px;
+    font-size: 15px;
+    color: #fff;
+    background-color: #555;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.error-container .btn:hover {
+    background-color: #333;
+}
+
+/*예약 폼 컨테이너만 변경*/
+.check-form-container2 {
+    width: 100%;
+    max-width: 1000px;
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}

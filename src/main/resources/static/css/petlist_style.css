@@ -1,0 +1,139 @@
+@charset "UTF-8";
+
+/*
+    이 파일은 mainpage.css가 적용된 후,
+    마이페이지의 고유한 레이아웃(사이드바 + 콘텐츠)을 위해 사용됩니다.
+    mypage_style.css와 거의 동일한 구조를 가집니다.
+*/
+
+/* 1. 마이페이지 전체를 감싸는 컨테이너 (mypage_style.css와 동일) */
+.mypage-container {
+    display: flex;
+    max-width: 1200px;
+    width: 90%;
+    margin: 50px auto;
+    min-height: 60vh;
+}
+
+/* 2. 사이드 메뉴 (mypage_style.css와 동일) */
+.sidemenu {
+    width: 200px;
+    background: #f8f9fa;
+    border-right: 1px solid #e9ecef;
+    padding: 20px;
+}
+
+.sidemenu h2 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #4a90e2;
+}
+
+.sidemenu a {
+    display: block;
+    text-decoration: none;
+    color: #333;
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.sidemenu a:hover {
+    background: #e9ecef;
+    color: #000;
+}
+
+.sidemenu a.active {
+    background: #4a90e2;
+    color: white;
+    font-weight: bold;
+}
+
+/* 3. 콘텐츠 영역 (mypage_style.css와 동일) */
+.content {
+    flex: 1;
+    padding: 20px 40px;
+    background-color: #fff;
+    border-radius: 0 8px 8px 0;
+}
+
+.content h2 {
+    font-size: 24px;
+    color: #333;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+}
+
+/* --- 여기서부터 펫 목록 전용 스타일 --- */
+
+/* 4. 펫 카드 그리드 */
+.pet-grid {
+    display: grid;
+    /* 화면 크기에 맞춰 250px 너비의 카드를 자동으로 배치합니다. */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px; /* 카드 사이의 간격 */
+}
+
+/* 5. 개별 펫 카드 */
+.pet-card {
+    background: #fff;
+    border: 1px solid #e9ecef;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.pet-card.clickable:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+    cursor: pointer;
+}
+
+/* 펫 이미지 */
+.pet-img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    border: 3px solid #4a90e2;
+}
+
+.pet-card h3 {
+    margin: 10px 0 5px;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.pet-card p {
+    margin: 5px 0;
+    font-size: 0.95rem;
+    color: #555;
+}
+
+/* 펫 등록 버튼 영역 */
+.add-pet-box {
+    text-align: right;
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: 1px solid #eee;
+}
+
+.add-pet-btn {
+    padding: 10px 25px;
+    background: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+.add-pet-btn:hover {
+    background: #357abd;
+}

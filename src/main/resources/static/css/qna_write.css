@@ -1,0 +1,129 @@
+@charset "UTF-8";
+
+.btn-submit {
+  background-color: #007bff;     /* 파란색 */
+  color: white;                  /* 글자색 */
+  border: none;
+  border-radius: 6px;
+  padding: 8px 20px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-cancel {
+  background-color: #6c757d;     /* 회색 */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 20px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-left: 10px;            
+  transition: background-color 0.2s ease;
+}
+
+
+
+
+/* 취소 버튼 (회색 계열) */
+.btn-cancel {
+  background-color: #6c757d;     /* 회색 */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 20px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-left: 10px;             /* 버튼 간격 */
+  transition: background-color 0.2s ease;
+}
+	
+	
+  .note-toolbar {
+    padding: 4px 8px !important;
+  }
+  .note-toolbar .btn {
+    padding: 2px 5px !important;
+    font-size: 12px !important;
+  }
+  .note-editor.note-frame {
+/*     border-radius: 6px; */
+    border: 1px solid #ccc;
+  }
+  .note-editable {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  td {
+    padding: 8px;
+  }
+  
+  #center1{
+  	text-align: center;
+  	background-color: #f2f2f2;
+  }
+  #center2{
+  	text-align: center;
+  	background-color: #f2f2f2;
+  }
+.table td {
+  border: 1px solid #ccc;
+}
+
+.table tr.content td {
+  border: none;
+  background-color: transparent;
+  text-align: right;
+  padding-right: 10px;
+}
+.table tr.content2 td {
+  border: none;
+  background-color: transparent;
+  text-align: center;
+  padding-right: 10px;
+}
+.container {
+  margin: 30px auto;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+.container #table2 {
+  width: 1156px;
+  border-collapse: collapse;
+  table-layout: fixed; /* 반응형일 때 셀 자동 정렬 */
+  position: relative;
+  left: -8px; /* 왼쪽으로 10px 이동 */
+  margin-top: -10px;
+}
+
+.container td {
+  word-wrap: break-word;
+  padding: 8px;
+}
+
+#summernote {
+  width: 100%;
+  min-height: 300px;
+  box-sizing: border-box;
+/*   border-radius: 6px; */
+  border: 1px solid #ccc;
+}
+.note-editor.note-frame {
+  border-radius: 0 !important;
+}
+.note-editable {
+  min-height: 500px !important; /* 입력 영역 높이 */
+}
+
+.note-editor.note-frame {
+  min-height: 500px !important;
+}
+
+#h22{
+	background-color: #55adf6;
+	padding: 20px;
+	border-radius:3px; 
+	color: white;
+}
