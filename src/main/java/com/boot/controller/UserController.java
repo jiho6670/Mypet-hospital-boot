@@ -124,6 +124,18 @@ public class UserController {
         return "mypage_userinfo";
     }
 
+    /* ============================
+     *   마이페이지 수정 화면 이동
+     * ============================ */
+    @GetMapping("/mypage_userinfo_edit")
+    public String mypageUserInfoEdit(HttpSession session, Model model) {
+        Mypet_UserDTO loginUser = (Mypet_UserDTO) session.getAttribute("loginUser");
+        if (loginUser == null) return "redirect:/login";
+
+        model.addAttribute("loginUser", loginUser);
+        return "mypage_userinfo_edit";
+    }
+
 
     /* ============================
      *     회원 정보 수정 처리
