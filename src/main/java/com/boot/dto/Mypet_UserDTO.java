@@ -25,5 +25,5 @@ public class Mypet_UserDTO {
     private String user_img;       // 프로필 이미지 URL
     private String user_img_temp;  // 이미지 해시값 (중복 방지용)
     
-    private List<Mypet_PetDTO> pets;  // ✅ 유저가 보유한 펫 목록 (연동용)
+    private List<Mypet_PetDTO> pets;  // 유저가 보유한 펫 목록 (연동용)
 }
